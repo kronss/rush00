@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 12:10:32 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 12:44:03 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 15:05:15 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Class Shot: public Unit
 
 		Shot & operator=(Shot const & r);
 
-		int  moveRight(int map[][N]);
+		int  moveRight(int map[gYMap][gXMap]);
 		int		checkColision(Enemy &en);
 }
 

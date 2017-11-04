@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 12:13:35 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 13:36:15 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 14:56:33 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Shot::Shot(int const x, int const y, int const color)
 	_cord_x = x;
 	_cord_y = y;
 	_color = color;
-	_ch = 7;
 }
 
 Shot::~Shot() {}
@@ -35,16 +34,16 @@ Shot & Shot::operator=(Shot const & r)
 	setX(r._cord_x);
 	setY(r._cord_y);
 	setColor(r._color);
-	setCh(r._ch);
 	return (*this);
 }
 
-int	Shot::moveRight(int map[][N])
+int	Shot::moveRight(int map[gYMap][gXMap])
 {
 	if (getX() != 0 && map[getY()][getX() + 1] != -1)
 	{
-		map[getY()][getX()] = '*';
+		map[getY()][getX()] = DEFAULT;
 		_cord_x += 1;
+		map[getY()][getX()] = PLAYERS_BULET;
 		return 1;
 	}
 	return 0;

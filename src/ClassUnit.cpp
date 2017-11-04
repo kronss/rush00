@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 11:16:26 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 13:35:47 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 14:45:26 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,6 @@ void	Unit::setColor(int color)
 	_color = color;
 }
 
-void	Unit::setCh(int c)
-{
-	_ch = c;
-}
-
 int		Unit::getX()
 {
 	return _cord_x;
@@ -63,13 +58,4 @@ int		Unit::getY()
 int		Unit::getColor()
 {
 	return _color;
-}
-int		Unit::getCh()
-{
-	return _ch;
-}
-
-void	Unit::putCharByCord()
-{
-
 }

@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 11:24:17 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 12:11:50 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 15:05:14 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@ Class Player: public Unit
 {
 	public:
 		Player();
+		Player(int const x, int const y, int const color);
 		Player(Player const &n);
 		~Player();
 
 		Player & operator=(Player const & r);
 
-		int  moveUp(int map[][N]);
-		int  moveDown(int map[][N]);
-		int  moveLeft(int map[][N]);
-		int  moveRight(int map[][N]);
+		int  moveUp(int map[gYMap][gXMap]);
+		int  moveDown(int map[gYMap][gXMap]);
+		int  moveLeft(int map[gYMap][gXMap]);
+		int  moveRight(int map[gYMap][gXMap]);
 
 		void	shooting();
 }
