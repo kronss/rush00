@@ -13,8 +13,7 @@
 #ifndef CLASSSHOT_HPP
 # define CLASSSHOT_HPP
 
-#include "ClassUnit.hpp"
-#include "ClassEnemy.hpp"
+#include "main.hpp"
 
 class Enemy;
 

@@ -1,4 +1,4 @@
-#include "Window.hpp"
+#include "main.hpp"
 
 Window::Window()
 : _isPause(true), _isGameOn(true)

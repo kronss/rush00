@@ -13,8 +13,7 @@
 #ifndef CLASSENEMY_HPP
 # define CLASSENEMY_HPP
 
-#include "ClassUnit.hpp"
-#include "ClassPlayer.hpp"
+#include "main.hpp"
 
 class Player;
 

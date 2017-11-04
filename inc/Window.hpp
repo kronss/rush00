@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 
-#include "ClassPlayer.hpp"
+#include "main.hpp"
 
 
 int const gYMap = 30;

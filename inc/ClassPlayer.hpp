@@ -13,11 +13,9 @@
 #ifndef CLASSPLAYER_HPP
 # define CLASSPLAYER_HPP
 
-#include "ClassUnit.hpp"
-#include "ClassShot.hpp"
+#include "main.hpp"
 
 class Shot;
-
 
 class Player : public Unit 
 {

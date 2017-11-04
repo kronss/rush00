@@ -13,7 +13,7 @@
 #ifndef CLASSUNIT_HPP
 # define CLASSUNIT_HPP
 
-#include "Window.hpp"
+#include "main.hpp"
 
 
 extern int const gYMap;
