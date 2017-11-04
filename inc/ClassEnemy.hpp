@@ -16,7 +16,7 @@
 #include "ClassUnit.hpp"
 #include <ncurses.h>
 
-Class Enemy: public Unit  
+class Enemy: public Unit  
 {
 	public:
 		Enemy();
@@ -28,6 +28,6 @@ Class Enemy: public Unit
 
 		int  	moveLeft(int map[gYMap][gXMap]);
 		int		checkColision(Player &pl);
-}
+};
 
 #endif

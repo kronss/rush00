@@ -9,12 +9,20 @@
 
 
 
-// #include "Unit.class.hpp"
+#include "ClassPlayer.hpp"
 
 // #include "Pacman.class.hpp"
 
 int const gYMap = 30;
 int const gXMap = 50;
+
+    enum idColor
+    {
+        PLAYER = 1,
+        PLAYERS_BULET = 2,
+        ENEMY_1 = 3,
+        DEFAULT = 10
+    };
 
 
 
@@ -25,7 +33,7 @@ int const gXMap = 50;
 const int g_size = 19;
 
 
-class Unit;
+class Player;
 
 class Window
 {
@@ -43,7 +51,7 @@ public:
 
 
 
-    void   keyEvent(Unit &unit);
+    void   keyEvent(Player &player);
     void   pauseEvent();
     void   periodEvent();
 
@@ -59,13 +67,6 @@ private:
     bool    _isGameOn;
     // int    _matrix_priority[g_size][g_size];
 
-    enum idColor
-    {
-        PLAYER = 1,
-        PLAYERS_BULET = 2,
-        ENEMY_1 = 3,
-        DEFAULT = 10
-    };
 
 
     void    ncursesFunctionCreate();

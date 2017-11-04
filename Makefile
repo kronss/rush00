@@ -10,7 +10,11 @@ NAME = ft_retro
 
 #********* -INC
 INC_NAME =	main.hpp \
-            Window.hpp
+            Window.hpp \
+            ClassEnemy.hpp \
+            ClassPlayer.hpp \
+            ClassShot.hpp \
+            ClassUnit.hpp
 #                               <---------- add header file      
 
 INC_DIR =	inc
@@ -26,7 +30,11 @@ OBJ = $(subst .cpp,.o,$(subst $(SRC_DIR)/,$(OBJ_DIR)/,$(SRC)))
 SRC_DIR =	src
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_NAME))
 SRC_NAME =	main.cpp \
-            Window.cpp
+            Window.cpp \
+            ClassEnemy.cpp \
+            ClassPlayer.cpp \
+            ClassShot.cpp \
+            ClassUnit.cpp
 #                               <---------- add .cpp file   
 
 ################################################################################

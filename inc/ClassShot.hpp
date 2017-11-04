@@ -17,7 +17,7 @@
 #include "ClassEnemy.hpp"
 #include <ncurses.h>
 
-Class Shot: public Unit  
+class Shot: public Unit  
 {
 	public:
 		Shot();
@@ -29,6 +29,6 @@ Class Shot: public Unit
 
 		int  moveRight(int map[gYMap][gXMap]);
 		int		checkColision(Enemy &en);
-}
+};
 
 #endif

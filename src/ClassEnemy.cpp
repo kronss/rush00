@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include "ClassPlayer.hpp"
-#include <iostream>
+#include "ClassEnemy.hpp"
+
 
 Enemy::Enemy() {}
 
@@ -49,9 +50,9 @@ int	Enemy::moveLeft(int map[gYMap][gXMap])
 	return 0;
 }
 
-int	Enemy::checkColision(Player &pl);
+int	Enemy::checkColision(Player &pl)
 {
-	if (this.getX() == pl.getX() && this.getY() == pl.getY())
+	if (this->getX() == pl.getX() && this->getY() == pl.getY())
 	{
 		return 1;
 	}

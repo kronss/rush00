@@ -41,7 +41,7 @@ Window::~Window()
 
 
 void
-Window::keyEvent(Unit &unit)
+Window::keyEvent(Player &player)
 {
     int key;
 
@@ -52,19 +52,19 @@ Window::keyEvent(Unit &unit)
         }
         else if (key == 'w')
         {
-            unit.moveUp(_map);
+            player.moveUp((int **)_map);
         }
         else if (key == 's')
         {
-            unit.moveDown(_map);
+            player.moveDown((int **)_map);
         }    
         else if (key == 'a')
         {
-            unit.moveLeft(_map);
+            player.moveLeft((int **)_map);
         }
         else if (key == 'd')
         {
-            unit.moveRight(_map);
+            player.moveRight((int **)_map);
         }    
         else if (key == SPACE)
             _isPause ^= 1;

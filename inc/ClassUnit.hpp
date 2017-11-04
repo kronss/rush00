@@ -13,10 +13,15 @@
 #ifndef CLASSUNIT_HPP
 # define CLASSUNIT_HPP
 
-#include <ncurses.h>
 #include "Window.hpp"
 
-Class Unit 
+
+
+extern int const gYMap;
+extern int const gXMap;
+
+
+class Unit 
 {
 	protected:
 		int		_cord_y;
@@ -35,6 +40,6 @@ Class Unit
 		int		getX();
 		int		getY();
 		int		getColor();
-}
+};
 
 #endif

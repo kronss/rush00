@@ -5,23 +5,12 @@
 # include <iostream>
 # include <string>
 
-#include "Window.hpp"
+# include "Window.hpp"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# include "ClassUnit.hpp"
+# include "ClassEnemy.hpp"
+# include "ClassPlayer.hpp"
+# include "ClassShot.hpp"
 
 
 

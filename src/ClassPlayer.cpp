@@ -40,11 +40,10 @@ Player & Player::operator=(Player const & r)
 	setX(r._cord_x);
 	setY(r._cord_y);
 	setColor(r._color);
-	setCh(r._ch);
 	return (*this);
 }
 
-int	Player::moveUp(int map[gYMap][gXMap])
+int	Player::moveUp(int **map)
 {
 	if (getY() != 0 && map[getY() - 1][getX()] != -1)
 	{
@@ -56,7 +55,7 @@ int	Player::moveUp(int map[gYMap][gXMap])
 	return 0;
 }
 
-int	Player::moveDown(int map[gYMap][gXMap])
+int	Player::moveDown(int **map)
 {
 	if (getY() != N - 1 && map[getY() + 1][getX()] != -1)
 	{
@@ -68,7 +67,7 @@ int	Player::moveDown(int map[gYMap][gXMap])
 	return 0;
 }
 
-int	Player::moveLeft(int map[gYMap][gXMap])
+int	Player::moveLeft(int **map)
 {
 	if (getX() != 0 && map[getY()][getX() - 1] != -1)
 	{
@@ -80,7 +79,7 @@ int	Player::moveLeft(int map[gYMap][gXMap])
 	return 0;
 }
 
-int	Player::moveRight(int map[gYMap][gXMap])
+int	Player::moveRight(int **map)
 {
 	if (getX() != 0 && map[getY()][getX() + 1] != -1)
 	{
