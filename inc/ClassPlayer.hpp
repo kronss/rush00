@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 11:24:17 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 15:05:14 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 16:26:09 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 # define CLASSPLAYER_HPP
 
 #include "ClassUnit.hpp"
+#include "ClassShot.hpp"
 
-class Player: public Unit  
+class Shot;
+
+
+class Player : public Unit 
 {
 	public:
 		Player();
@@ -30,7 +34,7 @@ class Player: public Unit
 		int  moveLeft(int **map);
 		int  moveRight(int **map);
 
-		void	shooting();
+		void	shooting(int **map);
 };
 
 #endif

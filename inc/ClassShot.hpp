@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 12:10:32 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 15:05:15 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 16:19:18 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 #include "ClassUnit.hpp"
 #include "ClassEnemy.hpp"
-#include <ncurses.h>
 
-class Shot: public Unit  
+class Enemy;
+
+class Shot: public Unit
 {
 	public:
 		Shot();
@@ -27,7 +28,7 @@ class Shot: public Unit
 
 		Shot & operator=(Shot const & r);
 
-		int  moveRight(int map[gYMap][gXMap]);
+		int     moveRight(int **map);
 		int		checkColision(Enemy &en);
 };
 

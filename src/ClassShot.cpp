@@ -6,12 +6,11 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 12:13:35 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 14:56:33 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 16:06:03 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClassEnemy.hpp"
-#include <iostream>
+#include "ClassShot.hpp"
 
 Shot::Shot() {}
 
@@ -37,7 +36,7 @@ Shot & Shot::operator=(Shot const & r)
 	return (*this);
 }
 
-int	Shot::moveRight(int map[gYMap][gXMap])
+int	Shot::moveRight(int **map)
 {
 	if (getX() != 0 && map[getY()][getX() + 1] != -1)
 	{
@@ -49,9 +48,9 @@ int	Shot::moveRight(int map[gYMap][gXMap])
 	return 0;
 }
 
-int	Shot::checkColision(Enemy &en);
+int	Shot::checkColision(Enemy &en)
 {
-	if (this.getX() == en.getX() && this.getY() == en.getY())
+	if (this->getX() == en.getX() && this->getY() == en.getY())
 	{
 		return 1;
 	}

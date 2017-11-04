@@ -6,13 +6,11 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 11:34:46 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 15:04:17 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 16:17:01 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClassPlayer.hpp"
-#include "ClassShot.hpp"
-#include <iostream>
 
 Player::Player()
 {
@@ -57,7 +55,7 @@ int	Player::moveUp(int **map)
 
 int	Player::moveDown(int **map)
 {
-	if (getY() != N - 1 && map[getY() + 1][getX()] != -1)
+	if (getY() != gYMap - 1 && map[getY() + 1][getX()] != -1)
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_y += 1;
@@ -91,8 +89,8 @@ int	Player::moveRight(int **map)
 	return 0;
 }
 
-void	Player::shoting()
+void	Player::shooting(int **map)
 {
-	Unit* shot = new Shot(getX, getY, getColor);
-	shot.moveRight(map[gYMap][gXMap]);
+	Shot* shot = new Shot(getX(), getY(), getColor());
+	shot->moveRight(map);
 }

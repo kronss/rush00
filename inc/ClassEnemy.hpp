@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 12:39:44 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 15:05:13 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 16:20:04 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define CLASSENEMY_HPP
 
 #include "ClassUnit.hpp"
-#include <ncurses.h>
+#include "ClassPlayer.hpp"
+
+class Player;
 
 class Enemy: public Unit  
 {
@@ -26,7 +28,7 @@ class Enemy: public Unit
 
 		Enemy & operator=(Enemy const & r);
 
-		int  	moveLeft(int map[gYMap][gXMap]);
+		int  	moveLeft(int **map);
 		int		checkColision(Player &pl);
 };
 

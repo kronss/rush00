@@ -7,11 +7,8 @@
 #include <unistd.h>
 
 
-
-
 #include "ClassPlayer.hpp"
 
-// #include "Pacman.class.hpp"
 
 int const gYMap = 30;
 int const gXMap = 50;

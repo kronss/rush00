@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 11:06:20 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 15:05:20 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 15:36:57 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CLASSUNIT_HPP
 
 #include "Window.hpp"
-
 
 
 extern int const gYMap;

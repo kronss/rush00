@@ -6,12 +6,11 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 11:16:26 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 14:45:26 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 16:18:39 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClassUnit.hpp"
-#include <iostream>
 
 Unit::Unit() {}
 

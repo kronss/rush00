@@ -6,13 +6,11 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 12:42:40 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 15:04:52 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/04 16:23:48 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClassPlayer.hpp"
 #include "ClassEnemy.hpp"
-
 
 Enemy::Enemy() {}
 
@@ -38,7 +36,7 @@ Enemy & Enemy::operator=(Enemy const & r)
 	return (*this);
 }
 
-int	Enemy::moveLeft(int map[gYMap][gXMap])
+int	Enemy::moveLeft(int **map)
 {
 	if (getX() != 0)//&& (getX() - 1) != 0)
 	{
