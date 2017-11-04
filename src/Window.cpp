@@ -11,21 +11,24 @@ Window::Window()
 
 
 
-    attron(COLOR_PAIR(1));
-    mvprintw(22, 2, "01 - pacman");
-    attron(COLOR_PAIR(2));
-    mvprintw(23, 2, "02 - ghost1");
-    attron(COLOR_PAIR(3));
-    mvprintw(24, 2, "03 - ghost2, waiting for a few seconds");
-    attroff(COLOR_PAIR(3));
-    mvprintw(25, 2, "00 - treasure, give You no point)");
+    // attron(COLOR_PAIR(1));
+    // mvprintw(22, 2, "01 - pacman");
+    // attron(COLOR_PAIR(2));
+    // mvprintw(23, 2, "02 - ghost1");
+    // attron(COLOR_PAIR(3));
+    // mvprintw(24, 2, "03 - ghost2, waiting for a few seconds");
+    // attroff(COLOR_PAIR(3));
+    // mvprintw(25, 2, "00 - treasure, give You no point)");
 
-    mvprintw(27, 12, "'w' - step up");
-    mvprintw(28, 12, "'s' - step down");
-    mvprintw(29, 12, "'a' - step left");
-    mvprintw(30, 12, "'d' - step right");
+    // mvprintw(27, 12, "'w' - step up");
+    // mvprintw(28, 12, "'s' - step down");
+    // mvprintw(29, 12, "'a' - step left");
+    // mvprintw(30, 12, "'d' - step right");
 
-    mvprintw(32, 12, "'SPACE' - PAUSE");    
+    // mvprintw(32, 12, "'SPACE' - PAUSE");    
+
+
+    // if (_map[0][0] == 0) mvprintw(32, 12, "'SPACE' - PAUSE");    
 
     initMap();
 }
@@ -98,6 +101,22 @@ void        Window::periodEvent()
     period = (1.0 / 50.0);
     MSLEEP(period);
 }
+
+
+
+void   Window::setUnitOnMap(Unit & unit)
+{
+
+   mvprintw(32, 12, "y = %d", unit.getY());    
+   mvprintw(34, 12, "x = %d", unit.getX());    
+
+
+    _map[unit.getY()][unit.getX()] = unit.getId();
+}
+
+
+
+
 
 
 /******************************************************************************/
@@ -220,9 +239,9 @@ Window::initMap()
 void
 Window::printMap()
 {
-    for (int j = 0, y = 1; j < g_size; ++j, ++y)
+    for (int j = 0, y = 1; j < gYMap; ++j, ++y)
     {
-        for (int i = 0, x = 1; i < g_size; ++i, x+=2)
+        for (int i = 0, x = 1; i < gXMap; ++i, x+=2)
         {
             int color = _map[j][i];
             if (color == 1)

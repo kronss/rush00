@@ -76,7 +76,7 @@ r:	$(NAME)
 	./$(NAME)
 
 bug:
-	$(CC) $(CFLAGS)  -I./inc/ $(SRC) -g -o bug
+	$(CC) $(CFLAGS) $(SRC) -lncurses -g -o bug
 
 debug: bug
 	lldb -- ./bug

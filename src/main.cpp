@@ -5,8 +5,20 @@
 
 int main()
 {
-	std::cout << "Hello World" << std::endl;
 	Window window;
+
+	Player player;
+
+	window.setUnitOnMap(player);
+
+
+
+	window.printMap();
+
+	// Player
+
+
+
 	return 0;
 }
 

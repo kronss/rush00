@@ -23,7 +23,7 @@ Shot::Shot(int const x, int const y, int const color)
 {
 	_cord_x = x;
 	_cord_y = y;
-	_color = color;
+	_id = color;
 }
 
 Shot::~Shot() {}
@@ -32,7 +32,7 @@ Shot & Shot::operator=(Shot const & r)
 {
 	setX(r._cord_x);
 	setY(r._cord_y);
-	setColor(r._color);
+	setId(r._id);
 	return (*this);
 }
 

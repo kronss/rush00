@@ -25,9 +25,10 @@ class Unit
 	protected:
 		int		_cord_y;
 		int		_cord_x;
-		int		_color;
+		int		_id;
 	public:
 		Unit();
+		Unit(int y, int x, int id);
 		Unit(Unit const &n);
 		~Unit();
 
@@ -35,10 +36,14 @@ class Unit
 
 		void	setX(int x);
 		void	setY(int y);
-		void	setColor(int color);
+
+
+		void	setId(int color);
+
+
 		int		getX();
 		int		getY();
-		int		getColor();
+		int		getId();
 };
 
 #endif

@@ -13,10 +13,9 @@
 #include "main.hpp"
 
 Player::Player()
+: Unit(1, 1, 1)
 {
-	setX(1);
-	setX(1);
-	setColor(255);
+
 }
 
 Player::Player(Player const &n)
@@ -28,7 +27,7 @@ Player::Player(int const x, int const y, int const color)
 {
 	_cord_x = x;
 	_cord_y = y;
-	_color = color;
+	_id = color;
 }
 
 Player::~Player() {}
@@ -37,7 +36,7 @@ Player & Player::operator=(Player const & r)
 {
 	setX(r._cord_x);
 	setY(r._cord_y);
-	setColor(r._color);
+	setId(r._id);
 	return (*this);
 }
 
@@ -91,6 +90,6 @@ int	Player::moveRight(int **map)
 
 void	Player::shooting(int **map)
 {
-	Shot* shot = new Shot(getX(), getY(), getColor());
+	Shot* shot = new Shot(getX(), getY(), getId());
 	shot->moveRight(map);
 }

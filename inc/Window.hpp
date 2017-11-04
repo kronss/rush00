@@ -27,15 +27,14 @@ int const gXMap = 50;
 #define SPACE 32
 #define ESC 27
 
-const int g_size = 19;
-
 
 class Player;
+class Unit;
 
 class Window
 {
 public:
-    int     _map[g_size][g_size];
+    int     _map[gYMap][gXMap];
 
     Window();
     Window(Window const & cpy);
@@ -43,14 +42,17 @@ public:
 
     Window & operator = (Window const & rhs);
 
-
-
-
-
-
     void   keyEvent(Player &player);
     void   pauseEvent();
     void   periodEvent();
+
+
+
+
+    void   setUnitOnMap(Unit & unit);
+    void    printMap();
+
+
 
 
 
@@ -72,7 +74,6 @@ private:
     void    printHorizontLine(int y, int x, int y_limit);
     void    printVerticLine(int y, int x, int y_limit);
     void    initMap();
-    void    printMap();
     void    printSquareById(int y, int x, int color);
 
 
