@@ -5,6 +5,8 @@
 # include <iostream>
 # include <string>
 
+#include "Window.hpp"
+
 
 
 
@@ -27,3 +29,31 @@
 
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

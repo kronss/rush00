@@ -9,10 +9,13 @@ SHELL = /bin/sh
 NAME = ft_retro
 
 #********* -INC
-INC_NAME =	ft_retro.hpp
+INC_NAME =	main.hpp \
+            Window.hpp
+#                               <---------- add header file      
+
 INC_DIR =	inc
 INC = $(addprefix $(INC_DIR)/, $(INC_NAME))
-#                                       <---------- add header file      
+
 
 
 #********* -OBJ
@@ -22,9 +25,9 @@ OBJ = $(subst .cpp,.o,$(subst $(SRC_DIR)/,$(OBJ_DIR)/,$(SRC)))
 #********* -SRC
 SRC_DIR =	src
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_NAME))
-SRC_NAME =	main.cpp
-
-#                                      <---------- add .cpp file   
+SRC_NAME =	main.cpp \
+            Window.cpp
+#                               <---------- add .cpp file   
 
 ################################################################################
 #	RULES
@@ -35,7 +38,7 @@ SRC_NAME =	main.cpp
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INC)
-	$(CC) $(CFLAGS) -I./inc/ $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) -I./inc/ $(OBJ) -o $(NAME) -lncurses
 	@echo "\033[33m'$(NAME)' compiling done.\033[0m"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
