@@ -27,12 +27,12 @@ class Player : public Unit
 
 		Player & operator=(Player const & r);
 
-		int  moveUp(int **map);
-		int  moveDown(int **map);
-		int  moveLeft(int **map);
-		int  moveRight(int **map);
+		int  moveUp(int map[gYMap][gXMap]);
+		int  moveDown(int map[gYMap][gXMap]);
+		int  moveLeft(int map[gYMap][gXMap]);
+		int  moveRight(int map[gYMap][gXMap]);
 
-		void	shooting(int **map);
+		void	shooting(int map[gYMap][gXMap]);
 };
 
 #endif

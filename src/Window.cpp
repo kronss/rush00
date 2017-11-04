@@ -1,39 +1,16 @@
 #include "main.hpp"
 
 Window::Window()
-: _isPause(true), _isGameOn(true)
+: _isPause(false), _isGameOn(true)
 {
     ncursesFunctionCreate();
 
     createColorPair();
+
     printStaticBorderLines();
-
-
-
-
-    // attron(COLOR_PAIR(1));
-    // mvprintw(22, 2, "01 - pacman");
-    // attron(COLOR_PAIR(2));
-    // mvprintw(23, 2, "02 - ghost1");
-    // attron(COLOR_PAIR(3));
-    // mvprintw(24, 2, "03 - ghost2, waiting for a few seconds");
-    // attroff(COLOR_PAIR(3));
-    // mvprintw(25, 2, "00 - treasure, give You no point)");
-
-    // mvprintw(27, 12, "'w' - step up");
-    // mvprintw(28, 12, "'s' - step down");
-    // mvprintw(29, 12, "'a' - step left");
-    // mvprintw(30, 12, "'d' - step right");
-
-    // mvprintw(32, 12, "'SPACE' - PAUSE");    
-
-
-    // if (_map[0][0] == 0) mvprintw(32, 12, "'SPACE' - PAUSE");    
 
     initMap();
 }
-
-
 
 Window::~Window()
 {
@@ -42,58 +19,47 @@ Window::~Window()
     endwin();
 }
 
-
 void
 Window::keyEvent(Player &player)
 {
     int key;
 
-        key = getch();
-        if (key == ERR)
-        {
-            return (pauseEvent());
-        }
-        else if (key == 'w')
-        {
-            player.moveUp((int **)_map);
-        }
-        else if (key == 's')
-        {
-            player.moveDown((int **)_map);
-        }    
-        else if (key == 'a')
-        {
-            player.moveLeft((int **)_map);
-        }
-        else if (key == 'd')
-        {
-            player.moveRight((int **)_map);
-        }    
-        else if (key == SPACE)
-            _isPause ^= 1;
+    key = getch();
 
+    mvprintw(gYMap + 7, 0, "%d\n", key);//
 
-        periodEvent();
+    switch (key)
+    {
+        case (ERR)   : { return (pauseEvent());  break ; }
+        case ('w')   : { player.moveUp(_map);    break ; }
+        case ('s')   : { player.moveDown(_map);  break ; }
+        case ('a')   : { player.moveLeft(_map);  break ; }
+        case ('d')   : { player.moveRight(_map); break ; }
+        case (SPACE) : { player.shooting(_map);  break ; }
+        case ('p')   : { _isPause ^= 1;          break ; }
+    }
+
+    periodEvent();
 }
 
-void        Window::pauseEvent()
+void
+Window::pauseEvent()
 {
     int key;
 
-    while (_isPause == 1)
+    while (_isPause)
     {
         nodelay(stdscr, FALSE);
         key = getch();
-        // mvprintw(g_size + 7, 0, "%d\n", key);
-        if (key == SPACE)
-        {
-            _isPause ^= 1;
-        }
+
+        if (key == SPACE) _isPause ^= 1;
+
     }
     periodEvent();
 }
 
-void        Window::periodEvent()
+void
+Window::periodEvent()
 {
     double    period;
 
@@ -104,19 +70,15 @@ void        Window::periodEvent()
 
 
 
-void   Window::setUnitOnMap(Unit & unit)
+/******************************************************************************/
+/*                                SETTER                                      */
+/******************************************************************************/
+
+void
+Window::setUnitOnMap(Unit & unit)
 {
-
-   mvprintw(32, 12, "y = %d", unit.getY());    
-   mvprintw(34, 12, "x = %d", unit.getX());    
-
-
     _map[unit.getY()][unit.getX()] = unit.getId();
 }
-
-
-
-
 
 
 /******************************************************************************/
@@ -135,14 +97,22 @@ Window::getIsGameOn() const
     return  _isGameOn;
 }
 
-// int &**Window::getMap()
-// {
-//     return _map;
-// }
 
 /******************************************************************************/
 /*                                PRIVATE                                     */
 /******************************************************************************/
+
+Window::Window(Window const & cpy)
+{
+    (void)cpy;
+    return;
+}
+
+Window & Window::operator = (Window const & rhs)
+{
+    (void)rhs;
+    return *this;
+}
 
 void
 Window::ncursesFunctionCreate()
@@ -193,12 +163,12 @@ Window::createColorPair()
 void
 Window::printStaticBorderLines()
 {
-    printHorizontLine(0, 0, 100);
-    printHorizontLine(30, 0, 100);
-    printHorizontLine(40, 0, 100);
+    printHorizontLine(0, 0, 102);
+    printHorizontLine(31, 0, 102);
+    printHorizontLine(40, 0, 102);
 
     printVerticLine(0, 0, 40);
-    printVerticLine(0, 99, 40);
+    printVerticLine(0, 101, 40);
 }
 
 void    Window::printHorizontLine(int y, int x, int x_limit)
@@ -248,10 +218,8 @@ Window::printMap()
                 attron(A_BOLD);
             {
                 attron(COLOR_PAIR(color));
-
-                
+  
                 printSquareById(y, x, color);
-
 
                 attroff(COLOR_PAIR(color));
             }
@@ -266,24 +234,10 @@ Window::printSquareById(int y, int x, int color)
 {
     switch (color)
     {
-        case (PLAYER):
-        {
-            mvprintw(y, x, "%2.2hhs", "#>");
-            break;
-        }
-        case (PLAYERS_BULET):
-        {
-            mvprintw(y, x, "%2.2hhs", "--");
-            break;
-        }
-        case (ENEMY_1):
-        {
-            mvprintw(y, x, "%2.2hhs", "+=");
-        }
-        default:
-        {
-            mvprintw(y, x, "%2.2hhs", "  ");
-        }
+        case (PLAYER) :       { mvprintw(y, x, "%2.2hhs", "#>"); break; }
+        case (PLAYERS_BULET): { mvprintw(y, x, "%2.2hhs", "--"); break; }
+        case (ENEMY_1):       { mvprintw(y, x, "%2.2hhs", "+="); break; }
+        default:              { mvprintw(y, x, "%2.2hhs", "  ");        }
     }
 }
 
@@ -291,16 +245,24 @@ Window::printSquareById(int y, int x, int color)
 
 
 
+   // attron(COLOR_PAIR(1));
+    // mvprintw(22, 2, "01 - pacman");
+    // attron(COLOR_PAIR(2));
+    // mvprintw(23, 2, "02 - ghost1");
+    // attron(COLOR_PAIR(3));
+    // mvprintw(24, 2, "03 - ghost2, waiting for a few seconds");
+    // attroff(COLOR_PAIR(3));
+    // mvprintw(25, 2, "00 - treasure, give You no point)");
+
+    // mvprintw(27, 12, "'w' - step up");
+    // mvprintw(28, 12, "'s' - step down");
+    // mvprintw(29, 12, "'a' - step left");
+    // mvprintw(30, 12, "'d' - step right");
+
+    // mvprintw(32, 12, "'SPACE' - PAUSE");    
 
 
-
-
-
-
-
-
-
-
+    // if (_map[0][0] == 0) mvprintw(32, 12, "'SPACE' - PAUSE");    
 
 
 

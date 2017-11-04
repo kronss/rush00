@@ -30,7 +30,7 @@ class Unit
 		Unit();
 		Unit(int y, int x, int id);
 		Unit(Unit const &n);
-		~Unit();
+		virtual ~Unit();
 
 		Unit & operator=(Unit const & r);
 

@@ -18,7 +18,7 @@ int const gXMap = 50;
         PLAYER = 1,
         PLAYERS_BULET = 2,
         ENEMY_1 = 3,
-        DEFAULT = 10
+        DEFAULT = 32
     };
 
 
@@ -37,29 +37,27 @@ public:
     int     _map[gYMap][gXMap];
 
     Window();
-    Window(Window const & cpy);
     ~Window();
 
     Window & operator = (Window const & rhs);
 
-    void   keyEvent(Player &player);
-    void   pauseEvent();
-    void   periodEvent();
+    void    keyEvent(Player &player);
 
 
 
 
-    void   setUnitOnMap(Unit & unit);
+
     void    printMap();
 
 
+//SETTER
+    void    setUnitOnMap(Unit & unit);
 
 
 
 //GETTER
     bool    getIsPasuse() const;
     bool    getIsGameOn() const;
-    // int     **getMap();
 
 private:
     bool    _isPause;
@@ -67,6 +65,12 @@ private:
     // int    _matrix_priority[g_size][g_size];
 
 
+    Window(Window const & cpy);
+
+
+
+    void    pauseEvent();
+    void    periodEvent();
 
     void    ncursesFunctionCreate();
     void    createColorPair();

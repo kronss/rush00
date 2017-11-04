@@ -1,32 +1,35 @@
 CC = clang++
-
 CFLAGS = -Wall -Wextra -Werror -I./inc
-SHELL = /bin/sh
 
 ################################################################################
 #	
 ################################################################################
 NAME = ft_retro
 
-#********* -INC
+
+################################################################################
+#           INCLUDE
 INC_NAME =	main.hpp \
             Window.hpp \
             ClassEnemy.hpp \
             ClassPlayer.hpp \
             ClassShot.hpp \
-            ClassUnit.hpp
+            ClassUnit.hpp \
+            GameManeger.hpp
 #                               <---------- add header file      
 
 INC_DIR =	inc
 INC = $(addprefix $(INC_DIR)/, $(INC_NAME))
 
 
-
-#********* -OBJ
+################################################################################
+#          OBJECT
 OBJ_DIR =	.obj
 OBJ = $(subst .cpp,.o,$(subst $(SRC_DIR)/,$(OBJ_DIR)/,$(SRC)))
 
-#********* -SRC
+
+################################################################################
+#          SOURCE
 SRC_DIR =	src
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_NAME))
 SRC_NAME =	main.cpp \
@@ -34,8 +37,10 @@ SRC_NAME =	main.cpp \
             ClassEnemy.cpp \
             ClassPlayer.cpp \
             ClassShot.cpp \
-            ClassUnit.cpp
+            ClassUnit.cpp \
+            GameManeger.cpp
 #                               <---------- add .cpp file   
+
 
 ################################################################################
 #	RULES

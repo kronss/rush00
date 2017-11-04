@@ -13,7 +13,26 @@ int main()
 
 
 
-	window.printMap();
+
+
+		window.printMap();
+
+
+
+		// window.pauseEvent();
+
+
+
+	for ( ; ; )
+	{
+
+
+		window.keyEvent(player);
+
+		window.printMap();
+
+
+	}
 
 	// Player
 

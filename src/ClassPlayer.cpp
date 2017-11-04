@@ -40,9 +40,9 @@ Player & Player::operator=(Player const & r)
 	return (*this);
 }
 
-int	Player::moveUp(int **map)
+int	Player::moveUp(int map[gYMap][gXMap])
 {
-	if (getY() != 0 && map[getY() - 1][getX()] != -1)
+	if (getY() != 0)
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_y -= 1;
@@ -52,9 +52,9 @@ int	Player::moveUp(int **map)
 	return 0;
 }
 
-int	Player::moveDown(int **map)
+int	Player::moveDown(int map[gYMap][gXMap])
 {
-	if (getY() != gYMap - 1 && map[getY() + 1][getX()] != -1)
+	if (getY() != gYMap - 1)
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_y += 1;
@@ -64,9 +64,9 @@ int	Player::moveDown(int **map)
 	return 0;
 }
 
-int	Player::moveLeft(int **map)
+int	Player::moveLeft(int map[gYMap][gXMap])
 {
-	if (getX() != 0 && map[getY()][getX() - 1] != -1)
+	if (getX() != 0)
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_x -= 1;
@@ -76,9 +76,9 @@ int	Player::moveLeft(int **map)
 	return 0;
 }
 
-int	Player::moveRight(int **map)
+int	Player::moveRight(int map[gYMap][gXMap])
 {
-	if (getX() != 0 && map[getY()][getX() + 1] != -1)
+	if (getX() != gXMap - 1)
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_x += 1;
@@ -88,7 +88,7 @@ int	Player::moveRight(int **map)
 	return 0;
 }
 
-void	Player::shooting(int **map)
+void	Player::shooting(int map[gYMap][gXMap])
 {
 	Shot* shot = new Shot(getX(), getY(), getId());
 	shot->moveRight(map);

@@ -36,7 +36,7 @@ Shot & Shot::operator=(Shot const & r)
 	return (*this);
 }
 
-int	Shot::moveRight(int **map)
+int	Shot::moveRight(int map[gYMap][gXMap])
 {
 	if (getX() != 0 && map[getY()][getX() + 1] != -1)
 	{

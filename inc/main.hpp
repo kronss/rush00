@@ -12,6 +12,8 @@
 # include "ClassPlayer.hpp"
 # include "ClassShot.hpp"
 
+# include "GameManeger.hpp"
+
 
 
 

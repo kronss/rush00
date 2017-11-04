@@ -36,7 +36,7 @@ Enemy & Enemy::operator=(Enemy const & r)
 	return (*this);
 }
 
-int	Enemy::moveLeft(int **map)
+int	Enemy::moveLeft(int map[gYMap][gXMap])
 {
 	if (getX() != 0)//&& (getX() - 1) != 0)
 	{
