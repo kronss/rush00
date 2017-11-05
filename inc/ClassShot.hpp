@@ -28,7 +28,7 @@ class Shot: public Unit
 		Shot & operator=(Shot const & r);
 
 		int     moveRight(int map[gYMap][gXMap]);
-		int		checkColision(int map[gYMap][gXMap]);
+		int		checkColision(Enemy & enemy);
 };
 
 #endif

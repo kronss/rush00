@@ -15,6 +15,24 @@ Window::Window()
 Window::~Window()
 {
     nodelay(stdscr, FALSE);
+
+
+    
+
+
+
+ 
+   
+ 
+   
+  
+
+
+
+
+
+
+
     getch();
     endwin();
 }
@@ -26,7 +44,7 @@ Window::keyEvent(Player &player)
 
     key = getch();
 
-    mvprintw(gYMap + 7, 0, "%d\n", key);//
+    // mvprintw(gYMap + 7, 0, "%d\n", key); //verbose
 
     switch (key)
     {
@@ -37,6 +55,7 @@ Window::keyEvent(Player &player)
         case ('d')   : { player.moveRight(_map); break ; }
         case (SPACE) : { player.shooting(_map);  break ; }
         case ('p')   : { _isPause ^= 1;          break ; }
+        case (ESC)   : { _isGameOn = false   ;   break ; }
     }
 
     periodEvent();
@@ -64,7 +83,7 @@ Window::periodEvent()
     double    period;
 
     nodelay(stdscr, TRUE);
-    period = (1.0 / 50.0);
+    period = (1.0 / 20.0);
     MSLEEP(period);
 }
 

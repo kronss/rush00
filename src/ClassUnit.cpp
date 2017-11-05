@@ -58,7 +58,7 @@ void	Unit::setId(int color)
 	_id = color;
 }
 
-void	Unit::setFl(bool fl)
+void	Unit::setIsDead(bool fl)
 {
 	_isDead = fl;
 }

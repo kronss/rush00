@@ -28,7 +28,7 @@ class Enemy: public Unit
 		Enemy & operator=(Enemy const & r);
 
 		int  	moveLeft(int map[gYMap][gXMap]);
-		int		checkColision(Player &pl);
+		int		checkColision(Player & player);
 };
 
 #endif

@@ -34,7 +34,7 @@ Shot & Shot::operator=(Shot const & r)
 	setX(r._cord_x);
 	setY(r._cord_y);
 	setId(r._id);
-	setFl(false);
+	setIsDead(false);
 	return (*this);
 }
 
@@ -57,11 +57,13 @@ int	Shot::moveRight(int map[gYMap][gXMap])
 	return 0;
 }
 
-int	Shot::checkColision(int map[gYMap][gXMap])
+int	Shot::checkColision(Enemy & enemy)
 {
-	if (map[getY()][getX()] == ENEMY_1)
-	{
-		return 1;
-	}
+	if (getY() == enemy.getY())
+		if (getX() == enemy.getX())
+		{
+			enemy.setIsDead(true);
+			return 1;
+		}
 	return 0;
 }

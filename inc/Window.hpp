@@ -49,6 +49,8 @@ public:
 
 
     void    printMap();
+    void    pauseEvent();
+
 
 
 //SETTER
@@ -70,7 +72,6 @@ private:
 
 
 
-    void    pauseEvent();
     void    periodEvent();
 
     void    ncursesFunctionCreate();

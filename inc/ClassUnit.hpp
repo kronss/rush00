@@ -38,7 +38,7 @@ class Unit
 		void	setX(int x);
 		void	setY(int y);
 		void	setId(int color);
-		void	setFl(bool fl);
+		void	setIsDead(bool fl);
 
 		int		getX();
 		int		getY();

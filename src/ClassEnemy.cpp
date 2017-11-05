@@ -38,7 +38,7 @@ Enemy & Enemy::operator=(Enemy const & r)
 	setX(r._cord_x);
 	setY(r._cord_y);
 	setId(r._id);
-	setFl(false);
+	setIsDead(false);
 	return (*this);
 }
 
@@ -64,11 +64,31 @@ int	Enemy::moveLeft(int map[gYMap][gXMap])
 	return 0;
 }
 
-int	Enemy::checkColision(Player &pl)
+int	Enemy::checkColision(Player & player)
 {
-	if (this->getX() == pl.getX() && this->getY() == pl.getY())
-	{
-		return 1;
-	}
+	if (getY() == player.getY())
+		if (getX() == player.getX())
+			return 1;
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

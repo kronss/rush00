@@ -38,7 +38,7 @@ Player & Player::operator=(Player const & r)
 	setX(r._cord_x);
 	setY(r._cord_y);
 	setId(r._id);
-	setFl(false);
+	setIsDead(false);
 	return (*this);
 }
 

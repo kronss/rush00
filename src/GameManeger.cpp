@@ -3,8 +3,6 @@
 GameManeger::GameManeger()
 {
 
-    std::cout << "born" << std::endl;
-
     for (int i = 0; i < arrayMax; ++i)
     {
         arrayShot[i] = NULL;
@@ -15,7 +13,7 @@ GameManeger::GameManeger()
 
 GameManeger::~GameManeger()
 {
-    std::cout << "die" << std::endl;
+
     for (int i = 0; i < arrayMax; ++i)
     {
         delete arrayShot[i];  // = NULL;
@@ -28,7 +26,7 @@ GameManeger::~GameManeger()
 
 
 void
-GameManeger::update(int map[gYMap][gXMap])
+GameManeger::update(Player & player, int map[gYMap][gXMap])
 {
 //moveBullet()
     for (int i = 0; i < arrayMax; ++i)
@@ -36,6 +34,18 @@ GameManeger::update(int map[gYMap][gXMap])
         if (arrayShot[i] != NULL)
         {
             arrayShot[i]->moveRight(map);
+
+
+            for (int j = 0; j < arrayMax; ++j)
+            {
+                if (arrayEnemy[j] != NULL)
+                {
+                    if (arrayShot[i]->checkColision(*arrayEnemy[j]))
+                    {
+                        arrayShot[i]->setIsDead(true);
+                    }    
+                }
+            }
         }
     }
 //moveEnemy()
@@ -43,10 +53,15 @@ GameManeger::update(int map[gYMap][gXMap])
     {
         if (arrayEnemy[i] != NULL)
         {
+            if (arrayEnemy[i]->checkColision(player))
+            {
+                gameOn = false;
+                return ;
+            }    
             arrayEnemy[i]->moveLeft(map);
         }
     }
-
+/*******************************************delete**************************/
 //deleteBulletIfDead()
     for (int i = 0; i < arrayMax; ++i)
     {
@@ -85,14 +100,13 @@ GameManeger::setShotInArray(int const x, int const y, int const color)
    }
 }
 
-
 void
 GameManeger::setEnemyInArray(Window & window)
 {
     int y_random = rand() % (gYMap);
 
 
-    int i = rand() % 50; 
+    int i = rand() % 30; 
     if (i != 0)
         return ;
 

@@ -11,6 +11,7 @@
 int const arrayMax = 50;
 extern int const gYMap;
 extern int const gXMap;
+extern bool gameOn;
 
 class GameManeger
 {
@@ -20,7 +21,7 @@ public:
     ~GameManeger();
 
 
-    void update(int map[gYMap][gXMap]);
+    void update(Player & player, int map[gYMap][gXMap]);
 
 
 //SETTER
