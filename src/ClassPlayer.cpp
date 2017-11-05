@@ -13,7 +13,7 @@
 #include "main.hpp"
 
 Player::Player()
-: Unit(1, 1, 1, 1)
+: Unit(1, 1, 1)
 {
 
 }
@@ -23,12 +23,12 @@ Player::Player(Player const &n)
 	*this = n;
 }
 
-Player::Player(int const x, int const y, int const color, int const fl)
+Player::Player(int const x, int const y, int const color)
 {
 	_cord_x = x;
 	_cord_y = y;
 	_id = color;
-	_fl = fl;
+	_fl = false;
 }
 
 Player::~Player() {}
@@ -38,7 +38,7 @@ Player & Player::operator=(Player const & r)
 	setX(r._cord_x);
 	setY(r._cord_y);
 	setId(r._id);
-	setFl(r._fl);
+	setFl(false);
 	return (*this);
 }
 
@@ -93,7 +93,7 @@ int	Player::moveRight(int map[gYMap][gXMap])
 void	Player::shooting(int map[gYMap][gXMap])
 {
 
-	gameManeger.setShotInArray(getX() + 1, getY() + 1, PLAYERS_BULET, 1);
+	gameManeger.setShotInArray(getX() + 1, getY() + 1, PLAYERS_BULET);
 }
 
 

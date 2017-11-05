@@ -22,7 +22,7 @@ class Shot: public Unit
 	public:
 		Shot();
 		Shot(Shot const &n);
-		Shot(int const x, int const y, int const color, int const fl);
+		Shot(int const x, int const y, int const color);
 		~Shot();
 
 		Shot & operator=(Shot const & r);

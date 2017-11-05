@@ -23,12 +23,12 @@ Enemy::Enemy(Enemy const &n)
 	*this = n;
 }
 
-Enemy::Enemy(int const x, int const y, int const color ,int const fl)
+Enemy::Enemy(int const x, int const y, int const color)
 {
 	_cord_x = x;
 	_cord_y = y;
 	_id = color;
-	_fl = fl;
+	_fl = false;
 }
 
 Enemy::~Enemy() {}
@@ -38,7 +38,7 @@ Enemy & Enemy::operator=(Enemy const & r)
 	setX(r._cord_x);
 	setY(r._cord_y);
 	setId(r._id);
-	setId(r._fl);
+	setFl(false);
 	return (*this);
 }
 

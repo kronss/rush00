@@ -26,7 +26,7 @@ class Player : public Unit
 {
 	public:
 		Player();
-		Player(int const x, int const y, int const color, int const fl);
+		Player(int const x, int const y, int const color);
 		Player(Player const &n);
 		~Player();
 

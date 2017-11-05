@@ -29,7 +29,7 @@ class Unit
 		bool	_fl;
 	public:
 		Unit();
-		Unit(int y, int x, int id, int _fl);
+		Unit(int y, int x, int id);
 		Unit(Unit const &n);
 		virtual ~Unit();
 
@@ -38,12 +38,12 @@ class Unit
 		void	setX(int x);
 		void	setY(int y);
 		void	setId(int color);
-		void	setFl(int fl);
+		void	setFl(bool fl);
 
 		int		getX();
 		int		getY();
 		int		getId();
-		int		getFl();
+		bool	isDead();
 };
 
 #endif

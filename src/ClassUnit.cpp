@@ -18,11 +18,11 @@ Unit::Unit()
 
 }
 
-Unit::Unit(int y, int x, int id, int _fl)
+Unit::Unit(int y, int x, int id)
 : _cord_y(y),
 _cord_x(x),
 _id(id),
-_fl(fl)
+_fl(false)
 {
 
 }
@@ -39,7 +39,7 @@ Unit & Unit::operator=(Unit const & r)
 	_cord_y = r._cord_y;
 	_cord_x = r._cord_x;
 	_id = r._id;
-	_fl = r._fl;
+	_fl = false;
 	return (*this);
 }
 
@@ -58,7 +58,7 @@ void	Unit::setId(int color)
 	_id = color;
 }
 
-void	Unit::setFl(int fl)
+void	Unit::setFl(bool fl)
 {
 	_fl = fl;
 }
@@ -78,7 +78,7 @@ int		Unit::getId()
 	return _id;
 }
 
-int		Unit::getFl()
+bool	Unit::isDead()
 {
 	return _fl;
 }
