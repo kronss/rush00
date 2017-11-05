@@ -1,32 +1,77 @@
-// #ifndef GAME_MANEGER_HPP
-// # define GAME_MANEGER_HPP
+#ifndef GAME_MANEGER_HPP
+# define GAME_MANEGER_HPP
 
-// #include "main.hpp"
+#include "main.hpp"
 
 /******************************************************************************/
 /*                            SINGLETON PATTERN                               */
 /******************************************************************************/
 
 // class Shot;
-
-// class GameManeger
-// {
-// public:
-//     static GameManeger & getManeger();
-
-//     Shot    *arrayShot;
+// class Enemy;
 
 
+int const arrayMax = 50;
+extern int const gYMap;
+extern int const gXMap;
 
-// private:
-//     GameManeger();
-//     GameManeger(GameManeger const &n);
-//     ~GameManeger();
+class GameManeger
+{
+public:
 
-// //     GameManeger & operator=(GameManeger const & r);
-// };
+    GameManeger();
+    ~GameManeger();
 
-// #endif
+
+
+
+
+
+
+
+
+
+    void update(int map[gYMap][gXMap]);
+
+
+
+    void setShotInArray(int const x, int const y, int const color);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private:
+    Shot    *arrayShot[arrayMax];
+
+    Enemy   *arrayEnemy[arrayMax];
+
+
+
+
+
+
+
+
+
+
+    GameManeger(GameManeger const &n);
+
+    GameManeger & operator=(GameManeger const & r);
+
+
+};
+
+#endif
 
 
 

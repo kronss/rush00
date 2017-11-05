@@ -17,6 +17,11 @@
 
 class Shot;
 
+class GameManeger;
+
+extern  GameManeger gameManeger;
+
+
 class Player : public Unit 
 {
 	public:

@@ -2,9 +2,6 @@
 # define FT_RETRO_HPP
 
 
-# include <iostream>
-# include <string>
-
 # include "Window.hpp"
 
 # include "ClassUnit.hpp"
@@ -14,6 +11,14 @@
 
 # include "GameManeger.hpp"
 
+
+
+
+# include <string>
+
+
+#include <iostream>
+#include <ctime>
 
 
 

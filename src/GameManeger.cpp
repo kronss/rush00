@@ -1,53 +1,114 @@
 #include "main.hpp"
 
-// /******************************************************************************/
-// /*                                SETTER                                      */
-// /******************************************************************************/
+GameManeger::GameManeger()
+{
 
-//  void
-//  Window::setUnitOnMap(Unit & unit)
-//  {
-//      _map[unit.getY()][unit.getX()] = unit.getId();
-//  }
+    std::cout << "born" << std::endl;
 
-
-// /******************************************************************************/
-// /*                                GETTER                                      */
-// ****************************************************************************
-
-//  GameManeger & getManeger()
-//  {
-//      static GameManeger ref;
-//      return (ref);
-//  }
+    for (int i = 0; i < arrayMax; ++i)
+    {
+        arrayShot[i] = NULL;
+        arrayEnemy[i] = NULL;
+    }
+}
 
 
-// /******************************************************************************/
-// /*                                PRIVATE                                     */
-// /******************************************************************************/
+GameManeger::~GameManeger()
+{
+    std::cout << "die" << std::endl;
+    for (int i = 0; i < arrayMax; ++i)
+    {
+        delete arrayShot[i];  // = NULL;
+        delete arrayEnemy[i]; // = NULL;
+    }
+}
 
-//  GameManeger::GameManeger()
-//  {
 
-//  }
 
-//  GameManeger::GameManeger(GameManeger const &n)
-//  {
 
-//  }
 
-//  GameManeger::~GameManeger()
-//  {
 
-//  }
 
-//  GameManeger & GameManeger::operator=(GameManeger const & r)
-//  {
+void
+GameManeger::update(int map[gYMap][gXMap])
+{
+   for (int i = 0; i < arrayMax; ++i)
+   {
+       if (arrayShot[i] != NULL)
+       {
+           arrayShot[i]->moveRight(map);
+       }
+   }
 
-//  }
 
-// GameManeger:: InitEnemy(GameManeger const & r)
-//  {
- 	
-//  }
 
+
+}
+
+
+
+
+
+
+
+
+
+/******************************************************************************/
+/*                                SETTER                                      */
+/******************************************************************************/
+
+void
+GameManeger::setShotInArray(int const x, int const y, int const color)
+{
+
+
+   for (int i = 0; i < arrayMax; ++i)
+   {
+       if (arrayShot[i] == NULL)
+       {
+            arrayShot[i] = new Shot(x, y, color);
+            return    ;
+        }
+   }
+}
+
+
+
+
+
+
+/******************************************************************************/
+/*                                GETTER                                      */
+/******************************************************************************/
+
+// GameManeger * GameManeger::getManeger()
+// {
+//     if (!_game)
+//     {
+//         _game = new (GameManeger);
+
+//     }
+//     return (_game);
+// }
+
+
+
+
+
+
+
+/******************************************************************************/
+/*                                PRIVATE                                     */
+/******************************************************************************/
+
+
+GameManeger::GameManeger(GameManeger const &n)
+{
+    
+}
+
+
+GameManeger & GameManeger::operator=(GameManeger const & r)
+{
+   return *this;
+}

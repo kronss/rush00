@@ -1,7 +1,9 @@
 #include "main.hpp"
 
-#include <iostream>
-#include <ctime>
+
+
+
+GameManeger gameManeger;
 
 
 int main()
@@ -12,7 +14,7 @@ int main()
 
 	window.setUnitOnMap(player);
 
-	Enemy *enemies[50];
+	// Enemy *enemies[50];
 	// for(int i = 0; i < 50; i++)
 	// {
 	// 	srand((unsigned int)time(NULL));
@@ -41,6 +43,11 @@ int main()
 
 
 		window.keyEvent(player);
+
+
+
+		gameManeger.update(window._map);
+
 
 		window.printMap();
 

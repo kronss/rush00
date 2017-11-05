@@ -90,7 +90,14 @@ int	Player::moveRight(int map[gYMap][gXMap])
 
 void	Player::shooting(int map[gYMap][gXMap])
 {
-	Shot* shot = new Shot(getX() + 1, getY() + 1, PLAYERS_BULET);
-	while (shot->moveRight(map))
-		;
+
+	gameManeger.setShotInArray(getX() + 1, getY() + 1, PLAYERS_BULET);
 }
+
+
+
+
+
+
+
+

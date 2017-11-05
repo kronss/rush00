@@ -271,4 +271,3 @@ Window::printSquareById(int y, int x, int color)
 
 
 
-

@@ -42,9 +42,11 @@ int	Shot::moveRight(int map[gYMap][gXMap])
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_x += 1;
-		MSLEEP(1.0 / 50.0);
 		map[getY()][getX()] = PLAYERS_BULET;
 		
+
+
+		 mvprintw(32, 12, "'SPACE' - PAUSE");    
 		return 1;
 	}
 	return 0;
