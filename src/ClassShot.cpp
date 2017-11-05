@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 12:13:35 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 16:06:03 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/05 10:06:20 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ Shot & Shot::operator=(Shot const & r)
 
 int	Shot::moveRight(int map[gYMap][gXMap])
 {
-	if (getX() != 0 && map[getY()][getX() + 1] != -1)
+	if (getX() != gXMap - 1)
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_x += 1;
+		MSLEEP(1.0 / 50.0);
 		map[getY()][getX()] = PLAYERS_BULET;
+		
 		return 1;
 	}
 	return 0;

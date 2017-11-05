@@ -30,6 +30,7 @@ int const gXMap = 50;
 
 class Player;
 class Unit;
+class Enemy;
 
 class Window
 {
@@ -52,6 +53,7 @@ public:
 
 //SETTER
     void    setUnitOnMap(Unit & unit);
+    void    setUnitOnMap(Enemy en);
 
 
 

@@ -1,6 +1,7 @@
 #include "main.hpp"
 
-
+#include <iostream>
+#include <ctime>
 
 
 int main()
@@ -11,8 +12,20 @@ int main()
 
 	window.setUnitOnMap(player);
 
+	Enemy *enemies[50];
+	// for(int i = 0; i < 50; i++)
+	// {
+	// 	srand((unsigned int)time(NULL));
+ //   	 	int a = rand()%(gXMap-1+1) + 1;
 
+	// 	enemies[i] = new Enemy(a, gYMap, ENEMY_1);
 
+	// 	//window.setUnitOnMap(enemies[i]);
+	// 	window.printMap();
+	// 	usleep(1000000);
+	// 	if (i == 49)
+	// 		i = 0;
+	// }
 
 
 		window.printMap();

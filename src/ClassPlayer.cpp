@@ -6,7 +6,7 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 11:34:46 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 16:17:01 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/05 10:09:05 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int	Player::moveRight(int map[gYMap][gXMap])
 
 void	Player::shooting(int map[gYMap][gXMap])
 {
-	Shot* shot = new Shot(getX(), getY(), getId());
-	shot->moveRight(map);
+	Shot* shot = new Shot(getX() + 1, getY() + 1, PLAYERS_BULET);
+	while (shot->moveRight(map))
+		;
 }

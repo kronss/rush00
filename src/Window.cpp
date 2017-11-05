@@ -80,6 +80,11 @@ Window::setUnitOnMap(Unit & unit)
     _map[unit.getY()][unit.getX()] = unit.getId();
 }
 
+void
+Window::setUnitOnMap(Enemy en)
+{
+    _map[en.getY()][en.getX()] = en.getId();
+}
 
 /******************************************************************************/
 /*                                GETTER                                      */

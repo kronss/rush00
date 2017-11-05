@@ -6,13 +6,17 @@
 /*   By: nmatushe <nmatushe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 12:42:40 by nmatushe          #+#    #+#             */
-/*   Updated: 2017/11/04 16:23:48 by nmatushe         ###   ########.fr       */
+/*   Updated: 2017/11/05 09:34:21 by nmatushe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-Enemy::Enemy() {}
+
+Enemy::Enemy() 
+{
+	
+}
 
 Enemy::Enemy(Enemy const &n)
 {

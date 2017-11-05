@@ -1,47 +1,53 @@
 #include "main.hpp"
 
-/******************************************************************************/
-/*                                SETTER                                      */
-/******************************************************************************/
+// /******************************************************************************/
+// /*                                SETTER                                      */
+// /******************************************************************************/
 
-// void
-// Window::setUnitOnMap(Unit & unit)
-// {
-//     _map[unit.getY()][unit.getX()] = unit.getId();
-// }
-
-
-/******************************************************************************/
-/*                                GETTER                                      */
-/******************************************************************************/
-
-// GameManeger & getManeger()
-// {
-//     static GameManeger ref;
-//     return (ref);
-// }
+//  void
+//  Window::setUnitOnMap(Unit & unit)
+//  {
+//      _map[unit.getY()][unit.getX()] = unit.getId();
+//  }
 
 
-/******************************************************************************/
-/*                                PRIVATE                                     */
-/******************************************************************************/
+// /******************************************************************************/
+// /*                                GETTER                                      */
+// ****************************************************************************
 
-// GameManeger::GameManeger()
-// {
+//  GameManeger & getManeger()
+//  {
+//      static GameManeger ref;
+//      return (ref);
+//  }
 
-// }
 
-// GameManeger::GameManeger(GameManeger const &n)
-// {
+// /******************************************************************************/
+// /*                                PRIVATE                                     */
+// /******************************************************************************/
 
-// }
+//  GameManeger::GameManeger()
+//  {
 
-// GameManeger::~GameManeger()
-// {
+//  }
 
-// }
+//  GameManeger::GameManeger(GameManeger const &n)
+//  {
 
-// GameManeger & GameManeger::operator=(GameManeger const & r)
-// {
+//  }
 
-// }
+//  GameManeger::~GameManeger()
+//  {
+
+//  }
+
+//  GameManeger & GameManeger::operator=(GameManeger const & r)
+//  {
+
+//  }
+
+// GameManeger:: InitEnemy(GameManeger const & r)
+//  {
+ 	
+//  }
+
