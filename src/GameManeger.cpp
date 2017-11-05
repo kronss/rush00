@@ -43,6 +43,22 @@ GameManeger::update(int map[gYMap][gXMap])
 
 
 
+
+
+
+
+
+   for (int i = 0; i < arrayMax; ++i)
+   {
+       if (arrayShot[i] != NULL)
+       {
+           arrayShot[i]->moveRight(map);
+       }
+   }
+
+
+
+
 }
 
 
