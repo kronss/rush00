@@ -25,7 +25,7 @@ public:
 
 //SETTER
     void setShotInArray(int const x, int const y, int const color);
-    void setEnemyInArray(int const x, int const y, int const color);
+    void setEnemyInArray(Window & window);
 
 
 private:

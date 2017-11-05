@@ -36,14 +36,6 @@ GameManeger::update(int map[gYMap][gXMap])
         if (arrayShot[i] != NULL)
         {
             arrayShot[i]->moveRight(map);
-
-            // if (! arrayShot[i]->(map))
-            // {
-            //     delete arrayShot[i]
-            //     arrayShot[i] = NULL;
-            // }
-
-
         }
     }
 //moveEnemy()
@@ -94,13 +86,21 @@ GameManeger::setShotInArray(int const x, int const y, int const color)
 
 
 void
-GameManeger::setEnemyInArray(int const x, int const y, int const color)
+GameManeger::setEnemyInArray(Window & window)
 {
+    int y_random = rand() % (gYMap);
+
    for (int i = 0; i < arrayMax; ++i)
    {
         if (arrayEnemy[i] == NULL)
         {
-            arrayEnemy[i] = new Enemy(x, y, color);
+            arrayEnemy[i] = new Enemy(gXMap - 1, y_random, ENEMY_1);
+
+            window.setUnitOnMap(*(arrayEnemy[i]));
+
+
+
+
             return ;
         }
    }
