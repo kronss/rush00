@@ -28,7 +28,7 @@ Enemy::Enemy(int const x, int const y, int const color)
 	_cord_x = x;
 	_cord_y = y;
 	_id = color;
-	_fl = false;
+	_isDead = false;
 }
 
 Enemy::~Enemy() {}

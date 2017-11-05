@@ -26,7 +26,7 @@ class Unit
 		int		_cord_y;
 		int		_cord_x;
 		int		_id;
-		bool	_fl;
+		bool	_isDead;
 	public:
 		Unit();
 		Unit(int y, int x, int id);

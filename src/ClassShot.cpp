@@ -24,7 +24,7 @@ Shot::Shot(int const x, int const y, int const color)
 	_cord_x = x;
 	_cord_y = y;
 	_id = color;
-	_fl = false;
+	_isDead = false;
 }
 
 Shot::~Shot() {}
@@ -40,6 +40,8 @@ Shot & Shot::operator=(Shot const & r)
 
 int	Shot::moveRight(int map[gYMap][gXMap])
 {
+	if (_isDead == true) return 0;
+
 	if (getX() != gXMap - 1)
 	{
 		map[getY()][getX()] = DEFAULT;
@@ -48,13 +50,16 @@ int	Shot::moveRight(int map[gYMap][gXMap])
 		return 1;
 	}
 	else
+	{
 		map[getY()][getX()] = DEFAULT;
+		_isDead = true;
+	}
 	return 0;
 }
 
-int	Shot::checkColision(Enemy &en)
+int	Shot::checkColision(int map[gYMap][gXMap])
 {
-	if (this->getX() == en.getX() && this->getY() == en.getY())
+	if (map[getY()][getX()] == ENEMY_1)
 	{
 		return 1;
 	}

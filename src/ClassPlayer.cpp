@@ -28,7 +28,7 @@ Player::Player(int const x, int const y, int const color)
 	_cord_x = x;
 	_cord_y = y;
 	_id = color;
-	_fl = false;
+	_isDead = false;
 }
 
 Player::~Player() {}
@@ -93,7 +93,7 @@ int	Player::moveRight(int map[gYMap][gXMap])
 void	Player::shooting(int map[gYMap][gXMap])
 {
 
-	gameManeger.setShotInArray(getX() + 1, getY() + 1, PLAYERS_BULET);
+	gameManeger.setShotInArray(getX() + 1, getY(), PLAYERS_BULET);
 }
 
 

@@ -22,7 +22,7 @@ Unit::Unit(int y, int x, int id)
 : _cord_y(y),
 _cord_x(x),
 _id(id),
-_fl(false)
+_isDead(false)
 {
 
 }
@@ -39,7 +39,7 @@ Unit & Unit::operator=(Unit const & r)
 	_cord_y = r._cord_y;
 	_cord_x = r._cord_x;
 	_id = r._id;
-	_fl = false;
+	_isDead = false;
 	return (*this);
 }
 
@@ -60,7 +60,7 @@ void	Unit::setId(int color)
 
 void	Unit::setFl(bool fl)
 {
-	_fl = fl;
+	_isDead = fl;
 }
 
 int		Unit::getX()
@@ -80,5 +80,5 @@ int		Unit::getId()
 
 bool	Unit::isDead()
 {
-	return _fl;
+	return _isDead;
 }

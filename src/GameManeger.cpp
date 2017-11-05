@@ -27,47 +27,53 @@ GameManeger::~GameManeger()
 
 
 
-
-
 void
 GameManeger::update(int map[gYMap][gXMap])
 {
-   for (int i = 0; i < arrayMax; ++i)
-   {
-       if (arrayShot[i] != NULL)
-       {
-           arrayShot[i]->moveRight(map);
-       }
-   }
+//moveBullet()
+    for (int i = 0; i < arrayMax; ++i)
+    {
+        if (arrayShot[i] != NULL)
+        {
+            arrayShot[i]->moveRight(map);
+
+            // if (! arrayShot[i]->(map))
+            // {
+            //     delete arrayShot[i]
+            //     arrayShot[i] = NULL;
+            // }
 
 
+        }
+    }
+//moveEnemy()
+    for (int i = 0; i < arrayMax; ++i)
+    {
+        if (arrayEnemy[i] != NULL)
+        {
+            arrayEnemy[i]->moveLeft(map);
+        }
+    }
 
+//deleteBulletIfDead()
+    for (int i = 0; i < arrayMax; ++i)
+    {
 
-
-
-
-
-
-   for (int i = 0; i < arrayMax; ++i)
-   {
-       if (arrayShot[i] != NULL)
-       {
-           arrayShot[i]->moveRight(map);
-       }
-   }
-
-
-
-
+        if (arrayShot[i] != NULL && arrayShot[i]->isDead())
+        {
+            delete arrayShot[i];
+            arrayShot[i] = NULL;
+        }
+    }
+// //deleteEnemyIfDead()
+//     for (int i = 0; i < arrayMax; ++i)
+//     {
+//         if (arrayEnemy[i]->isDead())
+//         {
+//             delete arrayEnemy[i];
+//         }
+//     }
 }
-
-
-
-
-
-
-
-
 
 /******************************************************************************/
 /*                                SETTER                                      */
@@ -76,36 +82,33 @@ GameManeger::update(int map[gYMap][gXMap])
 void
 GameManeger::setShotInArray(int const x, int const y, int const color)
 {
-
-
    for (int i = 0; i < arrayMax; ++i)
    {
        if (arrayShot[i] == NULL)
        {
             arrayShot[i] = new Shot(x, y, color);
-            return    ;
+            return ;
         }
    }
 }
 
 
-
-
-
+void
+GameManeger::setEnemyInArray(int const x, int const y, int const color)
+{
+   for (int i = 0; i < arrayMax; ++i)
+   {
+        if (arrayEnemy[i] == NULL)
+        {
+            arrayEnemy[i] = new Enemy(x, y, color);
+            return ;
+        }
+   }
+}
 
 /******************************************************************************/
 /*                                GETTER                                      */
 /******************************************************************************/
-
-// GameManeger * GameManeger::getManeger()
-// {
-//     if (!_game)
-//     {
-//         _game = new (GameManeger);
-
-//     }
-//     return (_game);
-// }
 
 
 
@@ -120,9 +123,8 @@ GameManeger::setShotInArray(int const x, int const y, int const color)
 
 GameManeger::GameManeger(GameManeger const &n)
 {
-    
+    return ;
 }
-
 
 GameManeger & GameManeger::operator=(GameManeger const & r)
 {
