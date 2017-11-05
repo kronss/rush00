@@ -57,14 +57,15 @@ GameManeger::update(int map[gYMap][gXMap])
             arrayShot[i] = NULL;
         }
     }
-// //deleteEnemyIfDead()
-//     for (int i = 0; i < arrayMax; ++i)
-//     {
-//         if (arrayEnemy[i]->isDead())
-//         {
-//             delete arrayEnemy[i];
-//         }
-//     }
+//deleteEnemyIfDead()
+    for (int i = 0; i < arrayMax; ++i)
+    {
+        if (arrayEnemy[i] != NULL && arrayEnemy[i]->isDead())
+        {
+            delete arrayEnemy[i];
+            arrayEnemy[i] = NULL;
+        }
+    }
 }
 
 /******************************************************************************/
@@ -89,6 +90,12 @@ void
 GameManeger::setEnemyInArray(Window & window)
 {
     int y_random = rand() % (gYMap);
+
+
+    int i = rand() % 50; 
+    if (i != 0)
+        return ;
+
 
    for (int i = 0; i < arrayMax; ++i)
    {

@@ -80,7 +80,11 @@ int	Player::moveLeft(int map[gYMap][gXMap])
 
 int	Player::moveRight(int map[gYMap][gXMap])
 {
-	if (getX() != gXMap - 1)
+
+
+
+
+	if (getX() != (gXMap / 2) - 1)
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_x += 1;

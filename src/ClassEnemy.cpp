@@ -44,13 +44,23 @@ Enemy & Enemy::operator=(Enemy const & r)
 
 int	Enemy::moveLeft(int map[gYMap][gXMap])
 {
-	if (getX() != 0)//&& (getX() - 1) != 0)
+	if (_isDead == true) return 0;
+
+
+
+	if (getX() != 0)
 	{
 		map[getY()][getX()] = DEFAULT;
 		_cord_x -= 1;
 		map[getY()][getX()] = ENEMY_1;
 		return 1;
 	}
+	else
+	{
+		map[getY()][getX()] = DEFAULT;
+		_isDead = true;
+	}
+
 	return 0;
 }
 
