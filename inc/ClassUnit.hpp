@@ -26,9 +26,10 @@ class Unit
 		int		_cord_y;
 		int		_cord_x;
 		int		_id;
+		bool	_fl;
 	public:
 		Unit();
-		Unit(int y, int x, int id);
+		Unit(int y, int x, int id, int _fl);
 		Unit(Unit const &n);
 		virtual ~Unit();
 
@@ -36,14 +37,13 @@ class Unit
 
 		void	setX(int x);
 		void	setY(int y);
-
-
 		void	setId(int color);
-
+		void	setFl(int fl);
 
 		int		getX();
 		int		getY();
 		int		getId();
+		int		getFl();
 };
 
 #endif

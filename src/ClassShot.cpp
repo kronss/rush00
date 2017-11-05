@@ -19,11 +19,12 @@ Shot::Shot(Shot const &n)
 	*this = n;
 }
 
-Shot::Shot(int const x, int const y, int const color)
+Shot::Shot(int const x, int const y, int const color, int const fl)
 {
 	_cord_x = x;
 	_cord_y = y;
 	_id = color;
+	_fl = fl;
 }
 
 Shot::~Shot() {}
@@ -33,6 +34,7 @@ Shot & Shot::operator=(Shot const & r)
 	setX(r._cord_x);
 	setY(r._cord_y);
 	setId(r._id);
+	setFl(r._fl);
 	return (*this);
 }
 

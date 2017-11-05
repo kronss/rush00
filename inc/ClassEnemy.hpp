@@ -21,7 +21,7 @@ class Enemy: public Unit
 {
 	public:
 		Enemy();
-		Enemy(int const x, int const y, int const color);
+		Enemy(int const x, int const y, int const color, int const fl);
 		Enemy(Enemy const &n);
 		~Enemy();
 
